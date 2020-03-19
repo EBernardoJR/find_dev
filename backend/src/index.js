@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require('mongoose')
 const { db } = require('./.env')
 const routes = require('./routes')
-
+const cors = require('cors')
 
 mongoose.connect(db, {
         useNewUrlParser: true,
@@ -11,6 +11,13 @@ mongoose.connect(db, {
         //evitar erros
 }
 )
+
+//permitir que outras aplicações acessem
+app.use(cors({
+    //origin: 'http:localhost:3000'
+}))
+
+
 //usar JSON nas requisições!!!
 app.use(express.json())
 
