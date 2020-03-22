@@ -1,19 +1,22 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import Routes from './src/routes'
+import { StatusBar } from 'react-native'
+
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Hello world</Text>
-    </View>
-  );
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+  function hello(){
+    alert('Iae, tudo bem?')
+  }
+
+  return (
+    <>
+      <StatusBar 
+      barStyle='light-content'//branco
+      backgroundColor='#7d40e7' //no android
+      />
+      <Routes />
+    </>
+  ); 
+}
